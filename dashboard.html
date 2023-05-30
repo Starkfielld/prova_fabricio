@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>COVID-19 Tracker</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Font: Oleo Script -->
+  <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&display=fallback" rel="stylesheet">
+  <!-- Compressed Foundation CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+    integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Nav Bar -->
+  <div data-sticky-container>
+    <div class="show-for-small-only" data-sticky-on="small" data-sticky data-options="marginTop:0;" style="width: 100%;">
+      <div class="title-bar" data-responsive-toggle="responsive-menu1" data-hide-for="medium">
+        <button class="menu-icon" type="button" data-toggle="responsive-menu1"></button>
+        <div class="title-bar-title">Menu</div>
+        <div class="title-bar-right"><span class="stateName"></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="top-bar" id="responsive-menu1">
+    <div class="top-bar-left">
+      <!--Text for accessibility purposes.-->
+      <p class="show-for-sr">Welcome to the Covid-19 dashboard. This page will give you detailed information
+        about Covid-19 in your state or the entire United States. </p>
+      <h1><a class="h1" href="https://sheplt1.github.io/covid-tracker/index.html"><strong>Covid-19 Dashboard</strong></a></h1>
+    </div>
+    <div class="top-bar-right">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li><a href="#" class="stateName" id="stateName-topBar"></a></li>
+        <!--Text for accessibility purposes.-->
+        <p class="show-for-sr">Click on country to hear the stats for the entire United States. </p>
+        <li><a href="#" class="selector-dropdown-country" data-location-name="United States"
+            data-state-abbr="us">Brasil</a></li>
+        <li class="has-submenu selector-dropdown-states"><a href="#">Estados</a>
+          <ul class="submenu menu vertical scroll-list states-list" data-submenu>
+            <li><a href="#" class="selector-dropdown" data-location-name="Acre" data-state-abbr="AC">Acre </a></li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Alagoas " data-state-abbr="AL">Alagoas </a></li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Amapá " data-state-abbr="AP">Amapá </a></li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Amazonas " data-state-abbr="AM">Amazonas </a>
+            </li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Bahia "
+                data-state-abbr="BA">Bahia </a></li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Ceará " data-state-abbr="co">Ceará </a>
+            </li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Distrito Federal"
+                data-state-abbr="ct">Distrito Federal</a></li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Distrito Federal" data-state-abbr="de">Distrito Federal</a>
+            </li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Goiás" data-state-abbr="fl">Goiás</a></li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Maranhão " data-state-abbr="ga">Maranhão </a></li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Mato Grosso" data-state-abbr="hi">Mato Grosso</a></li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Mato Grosso do Sul" data-state-abbr="id">Mato Grosso do Sul</a></li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Minas Gerais " data-state-abbr="il">Minas Gerais </a>
+            </li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Pará " data-state-abbr="in">Pará </a></li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Paraíba " data-state-abbr="ia">Paraíba </a></li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Paraná " data-state-abbr="ks">Paraná </a></li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Pernambuco " data-state-abbr="ky">Pernambuco </a>
+            </li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Piauí" data-state-abbr="la">Piauí</a>
+            </li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Rio de Janeiro " data-state-abbr="me">Rio de Janeiro </a></li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Rio Grande do Norte" data-state-abbr="md">Rio Grande do Norte</a>
+            </li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Rio Grande do Sul"
+                data-state-abbr="ma">Rio Grande do Sul</a></li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Rondônia " data-state-abbr="mi">Rondônia </a>
+            </li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Roraima " data-state-abbr="mn">Roraima </a>
+            </li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Santa Catarina "
+                data-state-abbr="ms">Santa Catarina </a></li>
+            <li><a href="#" class="selector-dropdown" data-location-name="São Paulo" data-state-abbr="mo">São Paulo</a>
+            </li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Sergipe" data-state-abbr="mt">Sergipe</a></li>
+            <li><a href="#" class="selector-dropdown" data-location-name="Tocantins" data-state-abbr="ne">Tocantins</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Foundation Top Alerts Bar -->
+  <div class="grid-container fluid" id="top-alert-bar">
+    <div class="grid-x grid-margin-x show-for-small-only hide-for-medium" id="alert-bar-small">
+      <div class="cell small-6">
+        <div class="grid-y">
+          <div class="cell small-auto">
+            <a class="dashboard-nav-card maskAdvisoryButton">
+              <div class="grid-x align-center-middle">
+                <div class="cell small-3">
+                  <i class="dashboard-nav-card-icon fas fa-head-side-mask" aria-hidden="true"></i>
+
+                </div>
+                <div class="cell small-9">
+                  <h2 class="h4 dashboard-nav-card-title">Informações sobre Orientação de Máscaras</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="cell small-auto">
+            <a class="dashboard-nav-card socialDistancingButton">
+              <div class="grid-x align-center-middle">
+                <div class="cell small-3">
+                  <i class="dashboard-nav-card-icon fas fa-people-arrows" aria-hidden="true"></i>
+                </div>
+                <div class="cell small-9">
+                  <h2 class="h4 dashboard-nav-card-title">Requisitos de Distanciamento Social</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="cell small-6">
+        <div class="grid-y">
+          <div class="cell small-auto">
+            <a class="dashboard-nav-card travelRestrictionsButton">
+              <div class="grid-x align-center-middle">
+                <div class="cell small-3">
+                  <i class="dashboard-nav-card-icon fas fa-plane-slash" aria-hidden="true"></i>
+                </div>
+                <div class="cell small-9">
+                  <h2 class="h4 dashboard-nav-card-title">Informações sobre Restrições de Viagem</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="cell small-auto">
+            <a class="dashboard-nav-card newCasesTrendButton">
+              <div class="grid-x align-center-middle">
+                <div class="cell small-3">
+                  <i class="dashboard-nav-card-icon fas fa-viruses" aria-hidden="true"></i>
+                </div>
+                <div class="cell small-9">
+                  <h2 class="h4 dashboard-nav-card-title">Tendência de novos casos</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-x grid-margin-x hide-for-small-only show-for-medium" id="alert-bar-large">
+      <div class="cell medium-auto">
+        <a class="dashboard-nav-card maskAdvisoryButton">
+          <div class="grid-x align-center-middle">
+            <div class="cell medium-3">
+              <i class="dashboard-nav-card-icon fas fa-head-side-mask" aria-hidden="true"></i>
+            </div>
+            <div class="cell medium-9">
+              <h2 class="h4 dashboard-nav-card-title">Informações sobre Orientação de Máscaras</h4>
+                <!--Text for accessibility purposes.-->
+                <p class="show-for-sr">Clique neste link para ser direcionado a mais informações sobre orientações de máscaras.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="cell medium-auto">
+        <a class="dashboard-nav-card socialDistancingButton">
+          <div class="grid-x align-center-middle">
+            <div class="cell medium-3">
+              <i class="dashboard-nav-card-icon fas fa-people-arrows" aria-hidden="true"></i>
+            </div>
+            <div class="cell medium-9">
+              <h2 class="h4 dashboard-nav-card-title">Requisitos de Distanciamento Social</h4>
+                <!--Text for accessibility purposes.-->
+                <p class="show-for-sr">Clique neste link para ser direcionado a mais informações sobre orientações de distanciamento social.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="cell medium-auto">
+        <a class="dashboard-nav-card travelRestrictionsButton">
+          <div class="grid-x align-center-middle">
+            <div class="cell medium-3">
+              <i class="dashboard-nav-card-icon fas fa-plane-slash" aria-hidden="true"></i>
+            </div>
+            <div class="cell medium-9">
+              <h2 class="h4 dashboard-nav-card-title">Informações sobre Restrições de Viagem</h4>
+                <!--Text for accessibility purposes.-->
+                <p class="show-for-sr">Clique neste link para ser direcionado a mais informações sobre restrições de viagem.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="cell medium-auto">
+        <a class="dashboard-nav-card newCasesTrendButton">
+          <div class="grid-x align-center-middle">
+            <div class="cell medium-3">
+              <i class="dashboard-nav-card-icon fas fa-viruses" aria-hidden="true"></i>
+            </div>
+            <div class="cell medium-9">
+              <h2 class="h4 dashboard-nav-card-title">Tendência de novos casos</h4>
+                <!--Text for accessibility purposes.-->
+                <p class="show-for-sr">Clique neste link para obter mais informações sobre a tendência de novos casos.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Grid -->
+  <div class="grid-container fluid">
+    <div class="grid-x grid-margin-x">
+      <!-- Stats Sidebar -->
+      <div class="cell small-12 medium-3">
+        <div class="card">
+          <div class="card-section">
+            <!--Text for accessibility purposes.-->
+            <p class="show-for-sr">Aqui é onde você encontrará as estatísticas mais recentes da Covid-19 para o seu estado ou para todo o país.</p>
+            <h3 class="h4">Status atualizado <span id="updatedStatsDateSpan"></span></h4>
+              <p>Total de casos confirmados: <span class="todayTotPositiveSpan"></span></p>
+              <p>Novos casos diários: <span id="todayIncPositiveSpan"></span></p>
+              <p>Total de mortes confirmadas: <span id="todayTotDeathsSpan"></span></p>
+              <p>Mortes diarias: <span id="todayDailyDeathsSpan"></span></p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-section">
+            <h3 class="h4">Testes</h4>
+              <p>Testes positivos: <span class="todayTotPositiveSpan"></span></p>
+              <p>testes negativos: <span id="todayTotNegativeSpan"></span></p>
+              <p>total de testes: <span id="todayTotTestsSpan"></span></p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-section">
+            <h3 class="h4">Hospitalizações</h4>
+              <p>População atual hospitalizados: <span id="todayCurrHospitalSpan"></span></p>
+              <p>Auemento de Hospitalizações: <span id="todayIncHospitalSpan"></span></p>
+              <p>Total Hospitalizações na data: <span id="todayTotHospitalSpan"></span></p>
+          </div>
+        </div>
+      </div>
+      <!-- Middle Column -->
+      <div class="cell small-12 medium-6">
+        <div class="grid-y grid-margin-y grid-padding-y">
+
+          <!-- Charts -->
+          <!--Chart is hidden for accessibility-->
+          <p class="show-for-sr">This is where a chart is displayed for number of positive tests 
+            per daily tests administered in your area.</p>
+          <div class="cell medium-3 shrink">
+            <div aria-hidden="true">
+              <div class="responsive-embed widescreen">
+                <div class="chart-container" style="min-height: 205px;">
+                  <canvas id="myChart"></canvas>
+                </div>
+                <br>
+                <p>*
+                  Espaços em branco no gráfico devido a dados ausentes ou imprecisos.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Map Cell -->
+          <!--Map is hidden for accessibility-->
+          <p class="show-for-sr">This is where a map is displayed of your selected area.</p>
+          <div class="cell medium-9">
+            <div aria-hidden="true">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- News & Links Sidebar -->
+      <div class="cell small-12 medium-3">
+        <div class="grid-y grid-margin-y">
+          <!-- Latest News -->
+                <!--Text for accessibility letting users know this is the news area.-->
+                <p class="show-for-sr">This is where you will hear the most recent news regarding
+                  Covid-19.</p>
+                <h4 class="h4" id="headline0"></h4>
+                <p id="description0"> </p>
+                <a href="" id="url0"></a>
+              </div>
+            </div>
+            <div class="card" id="newsCard2">
+              <div class="card-section">
+                <h4 class="h4" id="headline1"></h4>
+                <p id="description1"></p>
+                <a href="" id="url1"></a>
+              </div>
+            </div>
+            <div class="card" id="newsCard3">
+              <div class="card-section">
+                <h4 class="h4" id="headline2"></h4>
+                <p id="description2"></p>
+                <a href="" id="url2"></a>
+              </div>
+            </div>
+          </div>
+          <!-- Links -->
+          <div class="cell medium-2">
+            <ul id="linksList">
+              <li>
+                <a href="index.html">Link Home</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <!-- Compressed Foundation JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+    integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/3bc3d54b47.js" crossorigin="anonymous"></script>
+  <!-- Chart JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <!-- Team Scripts -->
+  <script src="./Develop/script-ls.js"></script>
+  <script src="./Develop/alertbar.js"></script>
+  <script src="./Develop/maptest.js"></script>
+  <script src="./Develop/covid-News.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChs4wyhn9M-1Nl7QJkEInXTOy0p4347Jo&callback=initMap"></script>
+
+</body>
+
+</html>
